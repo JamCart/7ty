@@ -66,8 +66,7 @@ export function client ({ watch }) {
       !watch && del({ targets: 'public/*' }),
       svelte({
         compilerOptions: {
-          css: false,
-          hydratable: true,
+          hydratable: true
         },
         emitCss: false
       }),

@@ -1,6 +1,5 @@
 ---
 title: Pancakes
-slug: pancakes
 image: /images/cristina-matos-albers-S4dXp25NiLg-unsplash.jpg
 credits: <span>Photo by <a href="https://unsplash.com/@matosalbers?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Cristina Matos-Albers</a> on <a href="https://unsplash.com/@matosalbers?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 price: 20

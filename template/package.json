@@ -1,6 +1,6 @@
 {
-  "name": "TODO",
-  "description": "TODO",
+  "name": "todo",
+  "description": "todo",
   "type": "module",
   "version": "0.0.1",
   "scripts": {

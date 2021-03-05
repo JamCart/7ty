@@ -2,7 +2,13 @@
 import './style.css'
 import { Hydrate } from '@jamcart/7ty/components'
 import SavedItems from './_saved-items.svelte'
+
+export let title
 </script>
+
+<svelte:head>
+  <title>{ title }</title>
+</svelte:head>
 
 <main>
   <header>

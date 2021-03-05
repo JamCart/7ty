@@ -29,11 +29,7 @@ const data = {
 }
 </script>
 
-<svelte:head>
-  <title>{ title }</title>
-</svelte:head>
-
-<Layout>
+<Layout { title }>
   <article>
     <h2>{ title }</h2>
 

@@ -5,11 +5,7 @@ import Layout from './_layout.svelte'
 import Welcome from './_welcome.svelte'
 </script>
 
-<svelte:head>
-  <title>7ty</title>
-</svelte:head>
-
-<Layout>
+<Layout title="7ty">
   <Welcome />
   <ul>
     {#each Object.values(products) as product}

@@ -6,11 +6,7 @@ export default function (name, initial_value) {
   }
 
   const stored_value = localStorage.getItem(name)
-  if (stored_value) {
-    initial_value = JSON.parse(stored_value)
-  }
-
-  const store = writable(initial_value)
+  const store = writable(stored_value ? JSON.parse(stored_value) : initial_value)
 
   store.subscribe(value => {
     localStorage.setItem(name, JSON.stringify(value))

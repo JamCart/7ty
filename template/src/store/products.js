@@ -1,4 +1,4 @@
-import persist from './persist.js'
+import persist from './_persist.js'
 
 const store = persist('products', [])
 
