@@ -20,5 +20,10 @@
     "fs-extra": "^9.1.0",
     "minidom": "^1.0.0",
     "mri": "^1.1.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JamCart/7ty",
+    "directory": "7ty"
   }
 }

@@ -1,4 +1,4 @@
 {
   "private": true,
-  "workspaces": ["./7ty", "./template"]
+  "workspaces": ["./7ty", "./create-7ty", "./template"]
 }
