@@ -2,6 +2,12 @@
 
 7ty is a Static Site Generator that uses Svelte for templating.
 
+[Documentation](https://github.com/JamCart/7ty/blob/master/7ty/readme.md)
+
+## Installation
+
+`npm init @jamcart/7ty new-folder`
+
 ## Features
 
 - **Svelte:** Write everything as single file components.

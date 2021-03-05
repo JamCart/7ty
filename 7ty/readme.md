@@ -6,6 +6,10 @@
 
 * Node 14
 
+## Installation
+
+`npm init @jamcart/7ty new-folder`
+
 ## Project File Structure
 
 * `rollup.config.mjs` This must export two functions, `client` and `server`, that return Rollup's configuration.
@@ -63,7 +67,7 @@ export let name
 
 ## Partial Hydration
 
-`import { Hydration } from '7ty/components`
+`import { Hydration } from '@jamcart/7ty/components`
 
 A Svelte component is exposed to handle partial hydration.  It takes two parameters:
 
@@ -73,7 +77,7 @@ A Svelte component is exposed to handle partial hydration.  It takes two paramet
 
 ```html
 <script>
-import { Hydration } from '7ty/components`
+import { Hydration } from '@jamcart/7ty/components`
 import Counter from './_counter.svelte'
 </script>
 

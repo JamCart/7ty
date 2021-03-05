@@ -1,4 +1,4 @@
-import { plugin as hydration, preprocess } from '7ty/hydrate'
+import { plugin as hydration, preprocess } from '@jamcart/7ty/hydrate'
 import { minify } from 'html-minifier-terser'
 
 import alias from '@rollup/plugin-alias'

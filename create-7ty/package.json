@@ -1,5 +1,5 @@
 {
-  "name": "create-7ty",
+  "name": "@jamcart/create-7ty",
   "description": "Create 7ty project",
   "license": "0BSD",
   "type": "module",

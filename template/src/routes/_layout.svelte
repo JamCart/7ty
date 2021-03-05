@@ -1,6 +1,6 @@
 <script>
 import './style.css'
-import { Hydrate } from '7ty/components'
+import { Hydrate } from '@jamcart/7ty/components'
 import SavedItems from './_saved-items.svelte'
 </script>
 

@@ -1,5 +1,5 @@
 {
-  "name": "7ty",
+  "name": "@jamcart/7ty",
   "description": "Static site generator for Svelte",
   "license": "0BSD",
   "type": "module",

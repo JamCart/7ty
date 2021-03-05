@@ -15,7 +15,7 @@ export async function getData ({ slug }) {
 
 <script>
 import AddToCart from './_add-to-cart.svelte'
-import { Hydrate } from '7ty/components'
+import { Hydrate } from '@jamcart/7ty/components'
 
 export let credits
 export let html
