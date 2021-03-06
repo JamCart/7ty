@@ -67,7 +67,7 @@ export let name
 
 ## Partial Hydration
 
-`import { Hydration } from '@jamcart/7ty/components`
+`import { Hydrate } from '@jamcart/7ty/components`
 
 A Svelte component is exposed to handle partial hydration.  It takes two parameters:
 
@@ -77,10 +77,10 @@ A Svelte component is exposed to handle partial hydration.  It takes two paramet
 
 ```html
 <script>
-import { Hydration } from '@jamcart/7ty/components`
+import { Hydrate } from '@jamcart/7ty/components`
 import Counter from './_counter.svelte'
 </script>
 
 <h1>My Counter</h1>
-<Hydration component={ Counter } props={{ startValue: 10 }} />
+<Hydrate component={ Counter } props={{ startValue: 10 }} />
 ```
