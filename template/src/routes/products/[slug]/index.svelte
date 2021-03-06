@@ -14,7 +14,7 @@ export async function getData ({ slug }) {
 </script>
 
 <script>
-import AddToCart from './_add-to-cart.svelte'
+import SaveItem from './_save-item.svelte'
 import { Hydrate } from '@jamcart/7ty/components'
 
 export let credits
@@ -43,7 +43,7 @@ const data = {
     <div class="body">
       {@html html}
       <footer>
-        <Hydrate component={ AddToCart } props={ data } />
+        <Hydrate component={ SaveItem } props={ data } />
       </footer>
     </div>
   </article>

@@ -1,4 +1,5 @@
 import build from './build.js'
+import chalk from 'chalk'
 import chokidar from 'chokidar'
 
 export default async function watch () {
@@ -9,8 +10,7 @@ export default async function watch () {
   }).on('all', () => {
     build({ watch: true }).catch(e => {
       console.error(e)
-      console.log("Build aborted")
-      console.log("") // Deliberate blank line
+      console.log(chalk.red("Build aborted"))
     })
   })
 }

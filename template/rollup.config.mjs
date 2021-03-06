@@ -62,8 +62,7 @@ export function client ({ watch }) {
     },
     plugins: [
       multi_input.default({ relative: 'build/html' }),
-      ...shared_plugins({ browser: true, watch }),
-      !watch && del({ targets: 'public/*' }),
+      !watch && del({ targets: 'public' }),
       svelte({
         compilerOptions: {
           hydratable: true
@@ -84,6 +83,7 @@ export function client ({ watch }) {
         minifyJS: true
       }),
       !watch && terser(),
+      ...shared_plugins({ browser: true, watch })
     ]
   }
 }
@@ -99,8 +99,7 @@ export function server ({ watch }) {
     },
     plugins: [
       multi_input.default({ relative: 'src/routes' }),
-      ...shared_plugins({ browser: false, watch }),
-      del({ targets: 'build/*' }),
+      del({ targets: 'build' }),
       svelte({
         compilerOptions: {
           generate: 'ssr',
@@ -112,7 +111,8 @@ export function server ({ watch }) {
       css_chunks.default({
         chunkFileNames: '[hash].css',
         entryFileNames: '[hash].css'
-      })
+      }),
+      ...shared_plugins({ browser: false, watch })
     ]
   }
 }

@@ -7,7 +7,7 @@ const command = process.argv.slice(2)
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 // TODO: Is there a better way to enable source maps?
-await spawn('node', ['--enable-source-maps', join(__dirname, '/index.mjs'), ...command], {
+spawn('node', ['--enable-source-maps', join(__dirname, '/index.mjs'), ...command], {
   cwd: process.cwd(),
   stdio: 'inherit'
 })

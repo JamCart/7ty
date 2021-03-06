@@ -50,9 +50,13 @@ export async function writeHTML ({ template, file_name, stylesheets }) {
   const output_path = path.join('./build/html', file_name.replace(/-\w+\.js$/, '.html'))
 
   return Promise.all(paths.map(async params => {
-    const output_file = Object.entries(params).reduce((path, [key, value]) => {
-      return path.replace(`[${ key }]`, value)
-    }, output_path)
+    const output_file = output_path.replace(/\[(.+?)\]/, (_, key) => {
+      if (key in params) {
+        return params[key]
+      } else {
+        return `[${ key }]`
+      }
+    })
 
     // TODO: Verify getData returns an object
     const props = component.getData ? await component.getData(params) : params
@@ -62,6 +66,7 @@ export async function writeHTML ({ template, file_name, stylesheets }) {
       head: head + stylesheets,
       html
     })
-    await fs.outputFile(output_file, output)  
+    await fs.outputFile(output_file, output)
+    return output_file
   }))
 }
