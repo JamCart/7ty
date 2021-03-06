@@ -3,7 +3,7 @@
   "description": "Static site generator for Svelte",
   "license": "0BSD",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "bin": "./src/cli.js",
   "exports": {
     "./components": "./src/hydrate/components.js",
@@ -26,5 +26,13 @@
     "type": "git",
     "url": "https://github.com/JamCart/7ty",
     "directory": "7ty"
-  }
+  },
+  "keywords": [
+    "svelte",
+    "static",
+    "site",
+    "generator",
+    "ssg",
+    "sveltejs"
+  ]
 }
