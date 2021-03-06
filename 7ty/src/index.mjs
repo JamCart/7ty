@@ -11,7 +11,8 @@ process.on('unhandledRejection', e => {
 const argv = mri(process.argv.slice(2))
 
 if (argv.watch) {
-  watch()
+  const dirs = argv.watch === true ? ['./src'] : argv.watch.split(',')
+  watch({ dirs })
 } else {
   build({ watch: false })
 }

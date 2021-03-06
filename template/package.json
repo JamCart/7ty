@@ -7,7 +7,7 @@
     "build": "7ty",
     "dev": "run-p dev:*",
     "dev:server": "wait-on public/index.html && browser-sync start --no-ui --server ./public --watch",
-    "dev:ssg": "7ty --watch"
+    "dev:ssg": "7ty --watch src,static"
   },
   "devDependencies": {
     "@jackfranklin/rollup-plugin-markdown": "^0.3.0",

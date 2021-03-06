@@ -24,10 +24,10 @@ function asyncDebounce (fn) {
 }
 
 
-export default async function watch () {
+export default async function watch ({ dirs }) {
   await build({ watch: true })
 
-  chokidar.watch(['./static', './src'], {
+  chokidar.watch(dirs, {
     ignoreInitial: true
   }).on('all', asyncDebounce(() => {
     return build({ watch: true }).catch(e => {
