@@ -1,0 +1,18 @@
+{
+  "name": "@jamcart/test-7ty",
+  "description": "Test suite for 7ty",
+  "license": "0BSD",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "test": "node ./test.mjs"
+  },
+  "dependencies": {
+    "@jamcart/create-7ty": "^0.0.1",
+    "chalk": "^4.1.0",
+    "cypress": "^6.6.0",
+    "fs-extra": "^9.1.0",
+    "sirv-cli": "^1.0.11",
+    "wait-on": "^5.2.1"
+  }
+}
