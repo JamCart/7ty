@@ -6,6 +6,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import copy from 'rollup-plugin-copy'
 import css_chunks from 'rollup-plugin-css-chunks'
 import del from 'rollup-plugin-delete'
+import externals from 'rollup-plugin-node-externals'
 import glob from 'rollup-plugin-glob'
 import markdown from '@jackfranklin/rollup-plugin-markdown'
 import multi_input from 'rollup-plugin-multi-input'
@@ -112,6 +113,10 @@ export function server ({ watch }) {
         chunkFileNames: '[hash].css',
         entryFileNames: '[hash].css'
       }),
+      // rollup-plugin-node-externals speeds up the build.
+      // However, make sure any packages you import Svelte components from are
+      // declared as dependencies (not devDependencies) or they will also be excluded.
+      externals(),
       ...shared_plugins({ browser: false, watch })
     ]
   }

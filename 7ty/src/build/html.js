@@ -84,7 +84,6 @@ async function writeHTML ({ template, file_name, stylesheets }) {
 }
 
 
-
 export default async function (rollupOutput) {
   const template = await getTemplate()
   const entry_files = flattenImports(Object.values(rollupOutput))
