@@ -1,12 +1,7 @@
 import chalk from 'chalk'
-import fs from 'fs-extra'
 
 import runRollup from './build/rollup.js'
-import {
-  flattenStylesheetImports,
-  getTemplate,
-  writeHTML
-} from './build/html.js'
+import writeHTML from './build/html.js'
 
 export default async function build ({ watch = false }) {
   console.log(chalk.bold("\nBuild Started..."))
@@ -17,22 +12,7 @@ export default async function build ({ watch = false }) {
   const output = await runRollup('server', { use_cache: false, watch })
 
   console.log("* HTML...")
-  const template = await getTemplate()
-  const stylesheets = flattenStylesheetImports(output)
-
-  const writing_html = output
-    .filter(route => route.isEntry)
-    .map(async route => {
-      const file_name = route.fileName
-
-      const html_files = await writeHTML({
-        file_name,
-        stylesheets: stylesheets.get(file_name),
-        template
-      })
-      return [file_name, html_files]
-    })
-  await Promise.all(writing_html)
+  await writeHTML(output)
 
   console.log("* Client...")
   await runRollup('client', { use_cache: true, watch })
