@@ -13,8 +13,7 @@ jobs:
         with:
           node-version: 14
           registry-url: https://registry.npmjs.org/
-      - working-directory: ./7ty
-      - run: yarn install
       - run: npm publish --access public
+        working-directory: ./7ty
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
