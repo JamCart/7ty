@@ -71,9 +71,8 @@ export let name
 
 A Svelte component is exposed to handle partial hydration.  It takes two parameters:
 
-* `component` The Svelte component to render.  This must be the actual component, *not* an import path.  The component must have a non-empty `<script>` tag and be located inside the `src/` or otherwise it will not be picked up in the required step of preprocessing.
+* `component` The Svelte component to render.  This must be the actual component, *not* an import path.  The component must have a non-empty `<script>` tag or otherwise it will not be picked up in the required step of preprocessing.
 * `props` An object to pass to the component as props on initialization.  It must be `JSON.stringify`able.
-
 
 ```html
 <script>

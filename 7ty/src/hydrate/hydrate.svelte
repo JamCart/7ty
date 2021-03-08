@@ -19,11 +19,6 @@ setContext('_7ty_hydration')
 if (!component) {
   throw new Error('Missing component')
 }
-
-// Throw error if path is not in src directory
-$: if (path && !path.startsWith('src/')) {
-  throw new Error('Hydrated components must be located in the `src` directory')
-}
 </script>
 
 <div { id }>

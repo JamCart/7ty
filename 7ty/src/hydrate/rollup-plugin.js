@@ -1,4 +1,6 @@
 import minidom from 'minidom'
+import path from 'path'
+import normalizePath from '../util/normalize-path.js'
 
 function findModules (document) {
   const scripts = document.getElementsByTagName('script')
@@ -22,11 +24,11 @@ export default function () {
           const preload = new Set()
 
           findModules(document).forEach(tag => {
-            const original_import = tag.getAttribute('data-import')
+            const original_import = path.resolve(tag.getAttribute('data-import'))
             const props = tag.textContent
             const target = tag.getAttribute('data-target')
 
-            const chunk = chunk_by_facade['./' + original_import]
+            const chunk = chunk_by_facade[original_import]
             const new_import = chunk.fileName
             preload.add(chunk.fileName)
             chunk.imports.forEach(i => preload.add(i))
@@ -71,7 +73,8 @@ export default function () {
     
       let generated_code = 'export default null;\n'
       generated_code += findModules(document).map((tag) => {
-        return `import('$${ tag.getAttribute('data-import') }').then(m => new m.default());`
+        const import_path = path.resolve(tag.getAttribute('data-import'))
+        return `import('${ normalizePath(import_path) }').then(({ default: component }) => new component());`
       }).join('\n')
     
       return {

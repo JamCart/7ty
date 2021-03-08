@@ -36,7 +36,6 @@ function shared_plugins ({ browser, watch }) {
     alias({
       resolve: ['.js', '.svelte'],
       entries: {
-        // Partial hydration currently depends on this alias
         '$src': './src'
       }
     }),
@@ -83,7 +82,7 @@ export function client ({ watch }) {
         minifyCSS: true,
         minifyJS: true
       }),
-      !watch && terser(),
+      false && !watch && terser(),
       ...shared_plugins({ browser: true, watch })
     ]
   }
