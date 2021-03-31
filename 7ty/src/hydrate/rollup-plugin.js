@@ -4,7 +4,7 @@ import normalizePath from '../util/normalize-path.js'
 
 function findModules (document) {
   const scripts = document.getElementsByTagName('script')
-  return Array.from(scripts).filter(tag => typeof tag.getAttribute('data-hydrate') !== 'undefined')
+  return Array.from(scripts).filter(tag => tag.getAttribute('data-hydrate'))
 }
 
 export default function () {
