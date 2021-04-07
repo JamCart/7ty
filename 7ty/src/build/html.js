@@ -24,7 +24,8 @@ export function flattenImports (output) {
   return output
     .filter(i => i.isEntry)
     .map(i => {
-      const imports = Array.from(traceImports(i.fileName, keyed))
+      // Typecast to Set to guarantee uniqueness
+      const imports = [...new Set(traceImports(i.fileName, keyed))]
         .filter(name => name.endsWith('.css'))
         .map(normalizePath)
 

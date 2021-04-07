@@ -10,7 +10,7 @@
     "dev:ssg": "7ty --watch src,static"
   },
   "dependencies": {
-    "@jamcart/7ty": "^0.1.4"
+    "@jamcart/7ty": "^0.1.5"
   },
   "devDependencies": {
     "@jackfranklin/rollup-plugin-markdown": "^0.3.0",

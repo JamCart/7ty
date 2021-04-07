@@ -37,13 +37,13 @@ async function main () {
   })
 
   console.log("Starting web server...")
-  run('npx', ['sirv-cli', './.build/public', '--port', '5000'])
+  run('npx', ['sirv-cli', './.build/public', '--port', '5000', '--quiet'])
   await waitOn({
     resources: ['http://localhost:5000'],
     timeout: 5 * 1000
   })
 
-  console.log("Running tests")
+  console.log("Running tests...")
   await run('npx', ['cypress', 'run'])
 
   console.log(chalk.green('All tests passed!'))
