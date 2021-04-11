@@ -3,7 +3,7 @@
   "description": "Static site generator for Svelte",
   "license": "0BSD",
   "type": "module",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "bin": "./src/cli.js",
   "exports": {
     "./components": "./src/hydrate/components.js",

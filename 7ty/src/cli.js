@@ -8,7 +8,6 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 
 // TODO: Is there a better way to enable source maps?
 const proc = fork(join(__dirname, '/index.mjs'), command, {
-  env: {},
   execArgv: ['--enable-source-maps'],
   stdio: 'inherit'
 })
