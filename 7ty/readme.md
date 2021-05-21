@@ -76,7 +76,7 @@ A Svelte component is exposed to handle partial hydration.  It takes two paramet
 
 ```html
 <script>
-import { Hydrate } from '@jamcart/7ty/components`
+import { Hydrate } from '@jamcart/7ty/components'
 import Counter from './_counter.svelte'
 </script>
 
